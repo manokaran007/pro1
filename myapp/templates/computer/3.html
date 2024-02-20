@@ -1,0 +1,74 @@
+{% extends 'comind.html' %}
+
+{% block content %}
+<body>
+    
+
+    <section>
+        <h2>Introduction</h2>
+        <p>A computer is an electronic device that processes data to perform various tasks. It can store, retrieve, and process information, making it a versatile tool for both personal and professional use.</p>
+        <h2>Components of a Computer</h2>
+        <p>A computer consists of several key components, including:
+        
+            Central Processing Unit (CPU)
+            Memory (RAM)
+            Storage (Hard Drive, SSD)
+            Input Devices (Keyboard, Mouse)
+            Output Devices (Monitor, Printer)
+            Motherboard
+            Graphics Processing Unit (GPU)</p>
+        
+    </section>
+
+ 
+    
+
+    <video width="800" height="450" controls>
+        <source src="https://github.com/manokaran007/Coursevideos/raw/main/Computer/Basics of Computers _ History of Computer by Generation _ Computer Evolution [ Animation ](720P_HD).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+<form method='post' action=''>
+    {% csrf_token %}
+    {% for q  in questions%}
+    <div class="form-group">
+      <label for="question">{{q.question}}</label>
+    </div>
+    <div class="form-check">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="option1" >
+            <label class="form-check-label" for="gridRadios1">
+                {{q.op1}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="option2">
+            <label class="form-check-label" for="gridRadios2">
+                {{q.op2}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="option3">
+            <label class="form-check-label" for="gridRadios1">
+                {{q.op3}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="option4">
+            <label class="form-check-label" for="gridRadios2">
+                {{q.op4}}
+            </label>
+        </div>
+        <br>
+    </div>    
+    {% endfor %}
+    <input id='timer' type='hidden' name="timer" value="">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</body>
+
+
+{% endblock %}
+
