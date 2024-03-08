@@ -48,8 +48,19 @@ urlpatterns = [
     path('tam6',views.tam6,name='tam6'),
     path('tam7',views.tam7,name='tam7'),
     path('tam8',views.tam8,name='tam8'),
-    path('tamil_quiz',views.engtest,name='tamtest'),
-    path('leaderboard/', views.leaderboard, name='leaderboard'),
+    path('tamil_quiz',views.tamtest,name='tamtest'),
+    path('Tamilleaderboard/', views.leaderboard, name='leaderboard'),
+    path('Englishleaderboard/', views.eleaderboard, name='eleaderboard'),
+    path('Mathsleaderboard/', views.mleaderboard, name='mleaderboard'),
+    path('Computerleaderboard/', views.cleaderboard, name='cleaderboard'),
     path('game',views.game,name='game'),
+    path('lb',views.lb,name='lb'),
+    path('abc/',views.abc,name='abc'),
     
+    path('click/',views.click,name='click'),
+    path('cube/',views.cube,name='cube'),
+    path('hangman/',views.hangman,name='hangman'),
+    
+    path('tower/',views.tower,name='tower'),
+    path('chess/',views.chess,name='chess'),
 ]
